@@ -68,6 +68,15 @@ document.addEventListener('DOMContentLoaded', ()=>{
     // make the tetr move down every second
     // the function is executed every second
     // timerId=setInterval(moveDown, 500);
+    //buttons
+    const up=document.getElementById('up')
+    const down=document.getElementById('down')
+    const left=document.getElementById('left')
+    const right=document.getElementById('right')
+    up.addEventListener('click', rotate)
+    down.addEventListener('click', moveDown)
+    left.addEventListener('click', moveLeft)
+    right.addEventListener('click', moveRight)
 
     // assign functions to keycodes
     function control(e){
@@ -201,6 +210,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         if(current.some(index=>squares[currentPosition+index].classList.contains('taken'))){
             scoreDisplay.innerHTML='end'
             clearInterval(timerId)
+            alert("Game over!\n*-*\nplay again?")
         }
     }
 
